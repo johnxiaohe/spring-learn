@@ -1,0 +1,20 @@
+org.springframework.context.ApplicationListener=\
+  com.reuben.demo.Listeners.StartPreListeners
+org.springframework.boot.SpringApplicationRunListener=\
+  com.reuben.demo.Listeners.StartEventListener
+org.springframework.context.ApplicationContextInitializer=\
+  
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  
+org.springframework.boot.autoconfigure.AutoConfigurationImportFilter=\
+  
+org.springframework.boot.autoconfigure.AutoConfigurationImportListener=\
+  
+org.springframework.boot.env.EnvironmentPostProcessor=\
+  
+org.springframework.boot.env.PropertySourceLoader=\
+  
+org.springframework.beans.BeanInfoFactory=\
+  
+org.springframework.boot.SpringBootExceptionReporter=\
+  
