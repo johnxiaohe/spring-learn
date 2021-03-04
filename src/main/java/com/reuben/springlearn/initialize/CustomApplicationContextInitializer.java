@@ -5,7 +5,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 
 /**
  * @author Reuben
- * 初始化应用上下文构造器,此时还未注入Bean
+ * 初始化应用上下文构造器,此时还未注入Bean(执行AbstractApplicationContext.refresh()方法).可以进行将自定义类字节码注入等操作.
  */
 public class CustomApplicationContextInitializer implements ApplicationContextInitializer {
     @Override
