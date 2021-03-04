@@ -1,7 +1,14 @@
 org.springframework.context.ApplicationListener=\
-  com.reuben.demo.Listeners.StartPreListeners
+  com.reuben.springlearn.Listeners.ApplicationStartingEventListener,\
+  com.reuben.springlearn.Listeners.ApplicationEnvironmentPreparedEventListener,\
+  com.reuben.springlearn.Listeners.ApplicationContextInitializedEventListener,\
+  com.reuben.springlearn.Listeners.ApplicationPreparedEventListener,\
+  com.reuben.springlearn.Listeners.ApplicationStartedEventListener,\
+  com.reuben.springlearn.Listeners.ApplicationReadyEventListener,\
+  com.reuben.springlearn.Listeners.ApplicationReadyEventListener,\
+  com.reuben.springlearn.Listeners.ApplicationFailedEventListener
 org.springframework.boot.SpringApplicationRunListener=\
-  com.reuben.demo.Listeners.StartEventListener
+  com.reuben.springlearn.Listeners.RunProcessEventListener
 org.springframework.context.ApplicationContextInitializer=\
   
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\

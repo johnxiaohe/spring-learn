@@ -3,11 +3,15 @@ package com.reuben.springlearn.Listeners;
 import org.springframework.boot.context.event.ApplicationStartingEvent;
 import org.springframework.context.ApplicationListener;
 
-public class StartPreListeners implements ApplicationListener<ApplicationStartingEvent> {
+/**
+ * @author Reuben
+ * 应用启动前事件监听器
+ */
+public class ApplicationStartingEventListener implements ApplicationListener<ApplicationStartingEvent> {
 
 
     @Override
     public void onApplicationEvent(ApplicationStartingEvent applicationStartingEvent) {
-        System.out.println("服务启动中" + applicationStartingEvent.getSource().toString());
+        System.out.println("Application应用服务即将启动");
     }
 }
