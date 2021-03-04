@@ -10,7 +10,7 @@ org.springframework.context.ApplicationListener=\
 org.springframework.boot.SpringApplicationRunListener=\
   com.reuben.springlearn.Listeners.RunProcessEventListener
 org.springframework.context.ApplicationContextInitializer=\
-  
+  com.reuben.springlearn.initialize.CustomApplicationContextInitializer
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
   
 org.springframework.boot.autoconfigure.AutoConfigurationImportFilter=\
