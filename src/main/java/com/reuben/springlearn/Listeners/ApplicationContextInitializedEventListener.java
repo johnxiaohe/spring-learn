@@ -1,15 +1,18 @@
 package com.reuben.springlearn.Listeners;
 
+import com.reuben.springlearn.constant.ApplicationInfoUtils;
 import org.springframework.boot.context.event.ApplicationContextInitializedEvent;
 import org.springframework.context.ApplicationListener;
 
 /**
  * @author Reuben
  * 应用上下文初始化完毕事件
+ * 发生于listeners.contextPrepared(context);之后
  */
 public class ApplicationContextInitializedEventListener implements ApplicationListener<ApplicationContextInitializedEvent> {
     @Override
     public void onApplicationEvent(ApplicationContextInitializedEvent applicationContextInitializedEvent) {
-        System.out.println("Application应用服务上下文初始化完毕");
+        ApplicationInfoUtils.configurableApplicationContext = applicationContextInitializedEvent.getApplicationContext();
+        System.out.println("三、Application应用服务上下文初始化完毕,已设置全局上下文Context");
     }
 }

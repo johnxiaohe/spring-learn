@@ -8,12 +8,12 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * @author Reuben
- * 项目下BeanDefinition读取完毕后执行,可加入本身拓展未在路径中的bean定义.
+ * 项目下BeanDefinition读取完毕后执行,可加入本身拓展未在路径中的bean定义(Bean元数据信息).
  */
 @Configuration
 public class CustomBeanDefinitionRegistryPostProcessor implements BeanDefinitionRegistryPostProcessor {
     /**
-     *  读取完项目BeanDefinition后执行该方法.可自行添加未在路径中的BeanDefinition或删除不需要的/重复功能的BeanDefinition
+     *  读取完项目BeanDefinition后执行该方法.可自行添加未在路径中的BeanDefinition或删除不需要的/重复功能的BeanDefinition/修改BeanDefinition
      * @param beanDefinitionRegistry
      * @throws BeansException
      */
@@ -32,7 +32,6 @@ public class CustomBeanDefinitionRegistryPostProcessor implements BeanDefinition
      */
     @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory configurableListableBeanFactory) throws BeansException {
-
         System.out.println("[BeanFactoryPostProcessor]BeanFactory");
     }
 }

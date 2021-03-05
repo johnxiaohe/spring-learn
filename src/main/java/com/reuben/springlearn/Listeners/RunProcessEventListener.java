@@ -42,7 +42,7 @@ public class RunProcessEventListener implements SpringApplicationRunListener {
 
     @Override
     public void started(ConfigurableApplicationContext context) {
-        System.out.println("Application应用启动完毕");
+        System.out.println("Application上下文刷新完毕");
     }
 
     @Override

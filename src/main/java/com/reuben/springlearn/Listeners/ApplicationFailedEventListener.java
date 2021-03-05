@@ -6,6 +6,7 @@ import org.springframework.context.ApplicationListener;
 /**
  * @author Reuben
  * 应用启动失败,异常中断会触发该事件
+ * 发生于listeners.failed(context, exception);之后
  */
 public class ApplicationFailedEventListener implements ApplicationListener<ApplicationFailedEvent> {
     @Override

@@ -54,7 +54,7 @@ public class CustomInstantiationAwareBeanPostProcessor implements InstantiationA
     }
 
     /**
-     * Bean属性值注入后执行 @Autowired、@Resource注解方向
+     * Bean属性值注入后执行 @Autowired、@Resource注解实现方式
      * @param pvs
      * @param pds
      * @param bean
