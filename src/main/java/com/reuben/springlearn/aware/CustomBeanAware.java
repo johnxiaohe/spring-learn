@@ -1,11 +1,12 @@
 package com.reuben.springlearn.aware;
 
 import com.reuben.springlearn.constant.ApplicationInfoUtils;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.*;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.ApplicationContextAware;
-import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.*;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -15,11 +16,17 @@ import javax.annotation.PreDestroy;
  * Bean声明周期可执行Aware. 按照顺序往下依次执行
  */
 @Component
-public class CustomBeanAware implements InitializingBean, DisposableBean, BeanNameAware, BeanFactoryAware, ApplicationContextAware {
+@Configuration
+@Data
+public class CustomBeanAware implements BeanNameAware, BeanFactoryAware, ApplicationContextAware, InitializingBean, DisposableBean {
     private String beanName;
+
+    public CustomBeanAware() {
+    }
 
     /**
      * BeanNameAware
+     * 该值为该Bean在容器中的名称.所以可以在初始化前进行Bean名称自定义
      * @param s
      */
     @Override
@@ -29,6 +36,7 @@ public class CustomBeanAware implements InitializingBean, DisposableBean, BeanNa
 
     /**
      * BeanFactoryAware
+     * 该方法调用发生于Bean实例化之后,Bean属性注入之前.可设置全局BeanFactory或对Bean对象进行定制化处理
      * @param beanFactory
      * @throws BeansException
      */
