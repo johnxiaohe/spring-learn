@@ -6,7 +6,8 @@
 > 这里启动的ApplicationContextInitializer、ApplicationLinstener和SpringApplicationRunLinstener均在应用上下文实例化之前就已经实例化完毕了,用来参与ApplicationContext应用上下文的构建工作.
 
 > 当ApplicationContext上下文准备完毕后执行ApplicationRunner和CommandLineRunner.
-## 2. SpringBean生命周期
+## 2. [SpringBean生命周期](https://blog.csdn.net/he1154910941/article/details/114420353)
+
 ### 名词解释
 ######  BeanDefinition
 > Bean整个生命周期包括实例化、初始化、销毁操作需要一个对象进行执行,这个对象就是该Bean的BeanDefinition它包含了Bean的元信息.例如该Bean是否懒加载、是否单例、父类路径、自身类路径、初始化方法名称、销毁方法名称等  
