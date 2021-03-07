@@ -45,15 +45,24 @@
 > 14. 如果Bean实现了DisposableBean/加了@PreDestroy/定义销毁方法,则Bean在销毁前会执行destory方法  
 > 执行顺序 @PreDestroy > DisposableBean > destoryMethod
 
+## 3. AbstractApplicationContext.refresh()
+> 该方法被调用于Springboot启动时ApplicationContext初始化完成后执行的refresh(context)方法中.
 
-## 3. Spring AOP
+#### 方法目的
+> 该方法实现了将声明/配置的Bean通过Bean加载机制加载到应用上下文容器中.并且在刷新过程中进行了部分的事件广播
 
-## 4. Spring IOC
+## 4. Springboot自动化配置
 
-## 5. Spring事务
+## 5. Spring AOP
 
-## 6. Spring过滤器
+## 6. Spring IOC
 
-## 7. Spring监听器
+## 7. Spring事务
 
-## 8. Spring拦截器
+## 8. Spring过滤器
+
+## 9. Spring监听器
+
+## 10. Spring拦截器
+
+## 11. Spring循环依赖
