@@ -1,4 +1,4 @@
-package com.reuben.springlearn.constant;
+package com.reuben.springlearn.start.constant;
 
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.ConfigurableApplicationContext;

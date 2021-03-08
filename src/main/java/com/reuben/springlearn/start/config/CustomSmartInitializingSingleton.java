@@ -1,7 +1,7 @@
-package com.reuben.springlearn.config;
+package com.reuben.springlearn.start.config;
 
 import com.reuben.springlearn.component.TestComponent;
-import com.reuben.springlearn.constant.ApplicationInfoUtils;
+import com.reuben.springlearn.start.constant.ApplicationInfoUtils;
 import org.springframework.beans.factory.SmartInitializingSingleton;
 import org.springframework.context.annotation.Configuration;
 

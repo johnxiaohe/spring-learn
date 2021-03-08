@@ -1,7 +1,5 @@
-package com.reuben.springlearn.Listeners;
+package com.reuben.springlearn.start.Listeners;
 
-import com.reuben.springlearn.component.TestBean;
-import com.reuben.springlearn.constant.ApplicationInfoUtils;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;

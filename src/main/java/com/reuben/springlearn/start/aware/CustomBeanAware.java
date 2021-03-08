@@ -1,7 +1,6 @@
-package com.reuben.springlearn.aware;
+package com.reuben.springlearn.start.aware;
 
-import com.reuben.springlearn.constant.ApplicationInfoUtils;
-import lombok.AllArgsConstructor;
+import com.reuben.springlearn.start.constant.ApplicationInfoUtils;
 import lombok.Data;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.*;

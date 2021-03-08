@@ -66,3 +66,6 @@
 ## 10. Spring拦截器
 
 ## 11. Spring循环依赖
+
+## 12. BeanFactory和FactoryBean区别
+

@@ -1,4 +1,4 @@
-package com.reuben.springlearn.runner;
+package com.reuben.springlearn.start.runner;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.core.annotation.Order;

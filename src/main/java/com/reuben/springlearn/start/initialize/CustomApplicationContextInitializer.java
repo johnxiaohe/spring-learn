@@ -1,4 +1,4 @@
-package com.reuben.springlearn.initialize;
+package com.reuben.springlearn.start.initialize;
 
 import org.springframework.context.ApplicationContextInitializer;
 import org.springframework.context.ConfigurableApplicationContext;

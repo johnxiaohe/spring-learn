@@ -1,4 +1,4 @@
-package com.reuben.springlearn.postprocessor;
+package com.reuben.springlearn.start.postprocessor;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.SmartInstantiationAwareBeanPostProcessor;

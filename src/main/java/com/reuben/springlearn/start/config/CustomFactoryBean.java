@@ -1,4 +1,4 @@
-package com.reuben.springlearn.config;
+package com.reuben.springlearn.start.config;
 
 import com.reuben.springlearn.component.TestComponent;
 import net.sf.cglib.proxy.Enhancer;

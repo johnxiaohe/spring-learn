@@ -1,4 +1,4 @@
-package com.reuben.springlearn.runner;
+package com.reuben.springlearn.start.runner;
 
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
