@@ -61,7 +61,7 @@
 
 ## 10. Spring拦截器
 
-## 11. [Spring循环依赖](https://editor.csdn.net/md/?articleId=114612034)
+## 11. [Spring循环依赖](https://blog.csdn.net/he1154910941/article/details/114612034)
 > 首先当Bean未有循环依赖三级缓存是没有什么意义的,当有循环依赖但Bean并没有AOP代理,则会直接返回原对象,也没有什么意义.  
 > 主要在当Bean存在循环依赖并且还有AOP代理时,三级缓存才有效果  
 > 三级缓存主要预防Bean有依赖时还可以完成代理增强(可查看`SmartInstanttiationAwareBeanPostProcessor.getEarlyBeanReference方法`以及`AbstractAutowireCapableBeanFactory类595行和966行`)  
