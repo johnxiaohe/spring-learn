@@ -42,7 +42,7 @@ public class CustomSmartInstantiationAwareBeanPostProcessor implements SmartInst
 
     /**
      * 发生于postProcessAfterInstantiation实例化方法之后后
-     * 预先感知Bean引用,防止循环依赖
+     * 防止循环依赖,对Bean做一些AOP/其他自定义操作
      * @param bean
      * @param beanName
      * @return

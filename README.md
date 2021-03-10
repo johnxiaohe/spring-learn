@@ -2,6 +2,7 @@
 > Spring框架主要有SpirngMVC提供Web功能执行  
 > Springboot提供自动配置功能以及大部分常用资源配置整合做到开箱即用  
 > SpringCloud定义了一整套微服务架构所需组件的解决方案
+> 每个大标题都是学习记录笔记
 ## 1. [Springboot启动过程](https://blog.csdn.net/he1154910941/article/details/114343464)
 > 这里启动的ApplicationContextInitializer、ApplicationLinstener和SpringApplicationRunLinstener均在应用上下文实例化之前就已经实例化完毕了,用来参与ApplicationContext应用上下文的构建工作.
 
@@ -60,7 +61,11 @@
 
 ## 10. Spring拦截器
 
-## 11. Spring循环依赖
+## 11. [Spring循环依赖](https://editor.csdn.net/md/?articleId=114612034)
+> 首先当Bean未有循环依赖三级缓存是没有什么意义的,当有循环依赖但Bean并没有AOP代理,则会直接返回原对象,也没有什么意义.  
+> 主要在当Bean存在循环依赖并且还有AOP代理时,三级缓存才有效果  
+> 三级缓存主要预防Bean有依赖时还可以完成代理增强(可查看`SmartInstanttiationAwareBeanPostProcessor.getEarlyBeanReference方法`以及`AbstractAutowireCapableBeanFactory类595行和966行`)  
+> 而本身Spring设计Bean的代理增强是在Bean初始化完成后的AnnotationAwareAspectJAutoProxyCreator后置处理器中完成的.提前执行则和设计思路不服.所以**三级缓存主要起预防循环依赖作用,可能是一个补丁机制**
 
 ## 12. BeanFactory和FactoryBean区别
 

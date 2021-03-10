@@ -21,9 +21,9 @@ public class CglibProxyDemo {
     }
 
     public static WelcomeStaff getProxy(){
-        if(welcomeStaff == null){
+        if(null == welcomeStaff){
             synchronized (CglibProxyDemo.class){
-                if(welcomeStaff == null){
+                if(null == welcomeStaff){
                     Enhancer enhancer = new Enhancer();
                     // 将啥也不会的迎宾员工他爹妈传进去,让他爹妈看看怎么办
                     enhancer.setClassLoader(WelcomeStaff.class.getClassLoader());
