@@ -47,7 +47,8 @@
 #### 方法目的
 > 该方法实现了将声明/配置的Bean通过Bean加载机制加载到应用上下文容器中.并且在刷新过程中进行了部分的事件广播
 
-## 4. Springboot自动化配置
+## 4. [Springboot自动装配](https://blog.csdn.net/he1154910941/article/details/114684188)
+> Springboot自动装配就是通过SPI思想将外部定义的自动配置类通过配置文件/注解获取类信息并加载以实现自动装配的功能,能让我们做到大部分功能依赖开箱即用
 
 ## 5. Spring AOP
 
@@ -69,3 +70,4 @@
 
 ## 12. BeanFactory和FactoryBean区别
 
+## 13. SpringMVC和Springboot分别负责什么功能(区别)

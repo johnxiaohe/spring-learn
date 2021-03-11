@@ -12,7 +12,7 @@ org.springframework.boot.SpringApplicationRunListener=\
 org.springframework.context.ApplicationContextInitializer=\
   com.reuben.springlearn.start.initialize.CustomApplicationContextInitializer
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  
+  com.reuben.springlearn.autoconfig.springspi.TestSpringSpiConfiguration
 org.springframework.boot.autoconfigure.AutoConfigurationImportFilter=\
   
 org.springframework.boot.autoconfigure.AutoConfigurationImportListener=\
