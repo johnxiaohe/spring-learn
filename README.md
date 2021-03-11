@@ -50,7 +50,9 @@
 ## 4. [Springboot自动装配](https://blog.csdn.net/he1154910941/article/details/114684188)
 > Springboot自动装配就是通过SPI思想将外部定义的自动配置类通过配置文件/注解获取类信息并加载以实现自动装配的功能,能让我们做到大部分功能依赖开箱即用
 
-## 5. Spring AOP
+## 5. [Spring AOP](https://blog.csdn.net/he1154910941/article/details/114582978)
+> Aop思想是对OOP思想的补充拓展,通过对离散的不同核心业务模块对象的共同系统需求功能,例如日志、性能监控等  
+> 通过将共性需求在核心业务执行时动态的织入其中,实现对业务逻辑不造成侵入与代码重复性.
 
 ## 6. Spring IOC
 
