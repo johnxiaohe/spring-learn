@@ -85,3 +85,8 @@
 > [使用Demo](https://github.com/johnxiaohe/spring-learn/blob/master/src/main/java/com/reuben/springlearn/start/config/CustomFactoryBean.java)
 
 ## 13. SpringMVC和Springboot分别负责什么功能(区别)
+###### SpringMVC
+> 基于Spring的MVC框架,用于开发Web服务.但是仅仅SpringMVC开发拥有繁琐的配置
+
+###### SpringBoot
+> 宏观来说SpringBoot没有新的功能,但是SpringBoot简化了Spring服务搭建和开发难度,并且整合很多第三方组件配置,实现配置的自动装配,做到功能开箱即用.即Springboot是Spring快速开发资源整合包
