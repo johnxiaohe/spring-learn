@@ -18,6 +18,7 @@ public class CustomFactoryBean implements FactoryBean<TestComponent> {
 
     @Override
     public TestComponent getObject() throws Exception {
+        // 对该Bean进行动态代理.
         Enhancer enhancer = new Enhancer();
         enhancer.setSuperclass(TestComponent.class);
         enhancer.setClassLoader(TestComponent.class.getClassLoader());

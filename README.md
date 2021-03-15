@@ -75,5 +75,13 @@
 > 而本身Spring设计Bean的代理增强是在Bean初始化完成后的AnnotationAwareAspectJAutoProxyCreator后置处理器中完成的.提前执行则和设计思路不服.所以**三级缓存主要起预防循环依赖作用,可能是一个补丁机制**
 
 ## 12. BeanFactory和FactoryBean区别
+###### BeanFactory(Bean工厂)
+> 是一个容器,用于管理Bean  
+> 属于IOC容器接口,定义IOC容器管理Bean的规范接口.用于管理Bean(查找Bean以及获取Bean部分元信息)
+
+###### FactoryBean(Bean创建工厂)
+> 是一个功能Bean,用于创建目标对象  
+> 是接口,提供了Bean创建的拓展方式.实现该接口并实现getObject方法用于自定义指定类的创建逻辑
+> [使用Demo](https://github.com/johnxiaohe/spring-learn/blob/master/src/main/java/com/reuben/springlearn/start/config/CustomFactoryBean.java)
 
 ## 13. SpringMVC和Springboot分别负责什么功能(区别)
