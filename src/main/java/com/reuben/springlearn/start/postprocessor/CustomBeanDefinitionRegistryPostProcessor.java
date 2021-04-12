@@ -8,7 +8,8 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * @author Reuben
- * 项目下BeanDefinition读取完毕后执行,可加入本身拓展未在路径中的bean定义(Bean元数据信息).
+ * 项目上下文中BeanFactory准备完毕执行,可对BeanFactory进行自定义化改动
+ * 在AbstractApplicationContext.refresh()方法中563行invokeBeanFactoryPostProcessors方法中执行
  */
 @Configuration
 public class CustomBeanDefinitionRegistryPostProcessor implements BeanDefinitionRegistryPostProcessor {
@@ -26,7 +27,7 @@ public class CustomBeanDefinitionRegistryPostProcessor implements BeanDefinition
     }
 
     /**
-     * BeanFactoryPostProcessor拓展接口方法,在读取完BeanDefinition后要实例化Bean之前会执行BeanFactory.可修改某些Bean元数据信息
+     * BeanFactoryPostProcessor拓展接口方法,可对BeanFactory进行自定义拓展和改动
      * @param configurableListableBeanFactory
      * @throws BeansException
      */

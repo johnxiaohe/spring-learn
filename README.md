@@ -41,11 +41,27 @@
 
 ```
 
-## 3. AbstractApplicationContext.refresh()
+## 3. [AbstractApplicationContext.refresh()](https://blog.csdn.net/he1154910941/article/details/115600540)
 > 该方法被调用于Springboot启动时ApplicationContext初始化完成后执行的refresh(context)方法中.
+> 方法通过十二步完成上下文内容加载更新,完成IOC容器初始化以及执行Bean生命周期工作.
+> 1. 刷新前准备工作,标记当前应用进入程序刷新状态,为刷新装载配置源,检查配置.初始化监听器容器以及事件容器
+> 2. 更新BeanFactory.由子类实现.会为BeanFactory设置一个序列号
+> 3. 填充BeanFactory属性: ClassLoader、属性编辑器、Bean初始化前组件注入回调并忽略这些回调依赖(invokeAwareInterfaces中七个回调)、
+>    设置系统级Bean依赖进去(BeanFactory、ResourceLoader、事件发布器、上下文)、事件监听器Bean后置处理器、注册系统级别单例Bean
+> 4. 让子类BeanFactory做自定义处理
+> 5. 先执行postProcessBeanDefinitionRegistry,然后完成所有@Component、@Configuration、@Bean注解注释的BeanDefinition扫描加入.然后执行所有的BeanFactory后置处理方法
+> 6. 按照优先级(系统级、声明排序优先级、未声明排序优先级)注册BeanPostProcessor的Bean到BeanFactory中
+> 7. 初始化MessageSource
+> 8. 创建上下文事件多播器(该多播器可以设置为异步执行,前提多播器中线程池存在)
+> 9. onRefresh()由各子类实现,Web应用在此步加入了Web服务器,并初始化各Web组件: DispatcherServlet、HandlerMapping、HandlerAdapter(查找返回Handler控制器)、ViewResolver
+> 10.现有监听器放入多播器中,因为BeanDefinition加载完毕,找到所有监听器放入多播器中.发布早期多播器未创建时攒下的事件
+> 11.完成IOC功能,创建、初始化所有单例Bean(懒加载工厂创建的Bean除外)以及依赖注入工作.
+>    执行实例化前后处理器、设置属性处理器、初始化前系统级别组件注入回调、初始化前处理器、初始化接口回调、初始化后处理器
+>    IOC完毕后执行SmartInitializingSingleton.afterSingletonsInstantiated.执行单例Bean加载完毕后的流程工作
+> 12.完成刷新,清除辅助加载缓存,启动SmartLifecycle周期,修改应用状态标志,发布上下文刷新完毕事件
 
 #### 方法目的
-> 该方法实现了将声明/配置的Bean通过Bean加载机制加载到应用上下文容器中.并且在刷新过程中进行了部分的事件广播
+> 该方法实现了将声明/配置的Bean通过Bean加载机制加载到应用上下文容器中.并且在刷新过程中进行了部分的事件广播以及收集事件监听器和对组件拓展注入回调的执行.开启Bean的生命周期
 
 ## 4. [Springboot自动装配](https://blog.csdn.net/he1154910941/article/details/114684188)
 > Springboot自动装配就是通过SPI思想将外部定义的自动配置类通过配置文件/注解获取类信息并加载以实现自动装配的功能,能让我们做到大部分功能依赖开箱即用
@@ -60,7 +76,7 @@
 > 其次IOC容器还将对象的依赖在初始化时动态注入进去(DI),对象只需声明所需依赖类型即可,而不需要知道注入依赖的具体对象  
 > 对于对象的生命周期管理交由IOC容器管理,对象仅对依赖有使用权,方便IOC容器进行功能拓展
 
-## 7. Spring事务
+## 7. Spring事务以及传播隔离机制
 
 ## 8. Spring过滤器
 
@@ -74,7 +90,7 @@
 > 三级缓存主要预防Bean有依赖时还可以完成代理增强(可查看`SmartInstanttiationAwareBeanPostProcessor.getEarlyBeanReference方法`以及`AbstractAutowireCapableBeanFactory类595行和966行`)  
 > 而本身Spring设计Bean的代理增强是在Bean初始化完成后的AnnotationAwareAspectJAutoProxyCreator后置处理器中完成的.提前执行则和设计思路不服.所以**三级缓存主要起预防循环依赖作用,可能是一个补丁机制**
 
-## 12. BeanFactory和FactoryBean区别
+## 12. [BeanFactory和FactoryBean区别](https://blog.csdn.net/he1154910941/article/details/114860410)
 ###### BeanFactory(Bean工厂)
 > 是一个容器,用于管理Bean  
 > 属于IOC容器接口,定义IOC容器管理Bean的规范接口.用于管理Bean(查找Bean以及获取Bean部分元信息)
