@@ -41,6 +41,7 @@ public class CustomSmartInstantiationAwareBeanPostProcessor implements SmartInst
     }
 
     /**
+     * 获取早期Bean引用.用于当对Bean有循环依赖时对Bean的自定义操作提前执行
      * 发生于postProcessAfterInstantiation实例化方法之后后
      * 防止循环依赖,对Bean做一些AOP/其他自定义操作
      * @param bean

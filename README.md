@@ -89,6 +89,7 @@
 > 主要在当Bean存在循环依赖并且还有AOP代理时,三级缓存才有效果  
 > 三级缓存主要预防Bean有依赖时还可以完成代理增强(可查看`SmartInstanttiationAwareBeanPostProcessor.getEarlyBeanReference方法`以及`AbstractAutowireCapableBeanFactory类595行和966行`)  
 > 而本身Spring设计Bean的代理增强是在Bean初始化完成后的AnnotationAwareAspectJAutoProxyCreator后置处理器中完成的.提前执行则和设计思路不服.所以**三级缓存主要起预防循环依赖作用,可能是一个补丁机制**
+> [Spring依赖注入和循环依赖解决流程解析](https://blog.nowcoder.net/n/c1409cd1f06f4cfa8380d9ddf5198f23)
 
 ## 12. [BeanFactory和FactoryBean区别](https://blog.csdn.net/he1154910941/article/details/114860410)
 ###### BeanFactory(Bean工厂)
